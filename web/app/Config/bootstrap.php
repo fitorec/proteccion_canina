@@ -60,6 +60,33 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
+Inflector::rules('singular', array(
+	'rules' => array(
+		'/([rlnd])es$/i' => '\1',
+		'/([taeiouj])s$/i' => '\1',
+	),
+	'irregular' => array(
+		'useres' => 'user',
+		'roles' => 'role',
+		'models' => 'model',
+		'controllers' => 'controller',
+		'responsables' => 'responsable',
+	)
+));
+Inflector::rules('plural', array(
+	'rules' => array(
+		'/([taeiouj])$/i' => '\1s',
+		'/([rlnd])$/i' => '\1es',
+	),
+	'irregular' => array(
+		'user' => 'users',
+		'role' => 'roles',
+		'model' => 'models',
+		'controller' => 'controllers',
+		'responsable' => 'responsables',
+	)
+));
+
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
  * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
