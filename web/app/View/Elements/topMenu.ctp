@@ -7,7 +7,9 @@
 		  <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse"><span>Menu</span></button>
       <a href="#" class="pull-left menubutton hidden-xs"><i class="fa fa-bars"></i></a>
 		  <!-- Site name for smallar screens -->
-		  <a href="index.html" class="navbar-brand">Mood<span class="bold">Strap</span></a>
+		  <a href="<?php echo Router::url('/'); ?>" class="navbar-brand">
+        Protecci&oacute;n<span class="bold">Canina</span>
+      </a>
 		</div>
 
       <!-- Navigation starts -->

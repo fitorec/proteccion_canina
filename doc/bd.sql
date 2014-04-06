@@ -5,10 +5,12 @@
 DROP TABLE IF EXISTS `extraviados`;
 CREATE TABLE IF NOT EXISTS `extraviados` (
 	`id` INT ( 5 ) PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
+	`user_id` INT ( 5 ) NOT NULL,
+	`perro_id` INT ( 5 ) NOT NULL,
 	`lugar` VARCHAR ( 200 ) NOT NULL UNIQUE COMMENT "Nombre del empleado",
 	`fecha` DATE NOT NULL,
 	`contacto` VARCHAR ( 200 ) DEFAULT NULL,
-	`estado` VARCHAR ( 150 ) DEFAULT NULL,
+	`estado` VARCHAR ( 150 ) DEFAULT 'ABIERTO' DEFAULT NULL,
 	`created` DATETIME DEFAULT NULL,
 	`modified` DATETIME DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -32,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `perros` (
 DROP TABLE IF EXISTS `perros_vacunas`;
 CREATE TABLE IF NOT EXISTS `perros_vacunas` (
 	`id` INT ( 5 ) PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
-	`perro_id` INT ( 5 ) DEFAULT NULL,
+	`perro_id` INT ( 5 ) NOT NULL,
 	`vacuna_id` INT ( 5 ) NOT NULL UNIQUE COMMENT "VACUNA",
 	`created` DATETIME DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -76,9 +78,9 @@ CREATE TABLE IF NOT EXISTS `enfermedades` (
 DROP TABLE IF EXISTS `votos`;
 CREATE TABLE IF NOT EXISTS `votos` (
 	`id` INT ( 5 ) PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
-	`usuario_id` INT ( 5 ) NOT NULL UNIQUE COMMENT "nombre de la vacuna",
-	`tabla_nombre` VARCHAR ( 250 ) DEFAULT NULL,
-	`id_externo` INT ( 5 ) DEFAULT NULL,
+	`user_id` INT ( 5 ) NOT NULL UNIQUE COMMENT "nombre de la vacuna",
+	`tabla_nombre` VARCHAR ( 250 ) NOT NULL,
+	`id_externo` INT ( 5 ) NOT NULL,
 	`created` DATETIME DEFAULT NULL,
 	`modified` DATETIME DEFAULT NULL,
 	`voto` FLOAT (  3 ) DEFAULT NULL
@@ -98,9 +100,9 @@ CREATE TABLE IF NOT EXISTS `paseos` (
 DROP TABLE IF EXISTS `adopciones`;
 CREATE TABLE IF NOT EXISTS `adopciones` (
 	`id` INT ( 5 ) PRIMARY KEY NOT NULL UNIQUE AUTO_INCREMENT,
-	`estado` VARCHAR ( 100 ) DEFAULT NULL,
-	`usuario_id` INT ( 5 ) NOT NULL UNIQUE COMMENT "nombre de la vacuna",
+	`user_id` INT ( 5 ) NOT NULL UNIQUE COMMENT "nombre de la vacuna",
 	`usuario_quien_dio_en_adopcion` INT ( 250 ) DEFAULT NULL,
+	`estado` VARCHAR ( 100 ) DEFAULT NULL,
 	`perro_id` INT ( 5 ) DEFAULT NULL,
 	`created` DATETIME DEFAULT NULL,
 	`modified` DATETIME DEFAULT NULL
