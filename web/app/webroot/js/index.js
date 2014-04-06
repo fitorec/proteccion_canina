@@ -1,7 +1,7 @@
 function showmessage(){
 	$.gritter.add({
-		title: 'Howdy User!',
-		text: 'This will fade out after a certain amount of time. Cum penatibus et <a href="#" style="color:#ccc">magnis dis parturient</a> montes, nascetur ridiculus mus.',
+		title: 'Hola Usuario!',
+		text: 'Mi nombre es <a href="#" style="color:#ccc">puppy</a> y necesito un hogar, por favor ayudame a encontrarlo.',
 		image: 'img/user2.png',
 		sticky: false,
 		time: ''

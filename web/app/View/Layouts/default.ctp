@@ -11,7 +11,6 @@
   <meta name="author" content="">
   <?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('cake.generic');
 		echo $this->fetch('meta');
 	?>
 
