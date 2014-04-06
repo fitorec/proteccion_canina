@@ -3,7 +3,7 @@
  * Plantilla para el Controlador generado por el bake de CakePhp
  *
  * @author     fitorec - <chanerec@gmail.com>
- * @copyright  2013-2014 e-scolar.net
+ * @copyright  2013-2014 proteccion-canina
  * @link       http://www.mundosica.com
  */
 echo "<?php\n";
@@ -12,7 +12,7 @@ echo "<?php\n";
  * Controlador <?php echo $controllerName."\n"; ?>
  *
  * @author     @fitorec - <chanerec@gmail.com>
- * @copyright  2013-2014 e-scolar.net
+ * @copyright  2013-2014 proteccion-canina
  * @created    <?php echo date('F j, Y, g:i a')."\n"; ?>
 <?php
 if (!$isScaffold) {

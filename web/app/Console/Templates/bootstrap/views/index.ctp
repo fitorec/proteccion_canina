@@ -1,6 +1,6 @@
 <?php
 /**
- * e-escolar.net
+ * proteccion-canina
  * Plantilla index - para cakephp con twbootstrap
  */
 echo "<?php\n";
@@ -13,14 +13,14 @@ $pre4="\n\t\t\t";
 
 ?>
 /**
- * e-escolar.net
+ * proteccion-canina
  * Vista:  <?php echo $titulo."\n"; ?>
  */
 #iniciando la autenticación
 $this->Html->initAuth($userAuth);
 
 #sección metaDatos
-$this->set('title_for_layout', 'e-scolar - <?php echo $titulo; ?>');
+$this->set('title_for_layout', 'proteccion-canina - <?php echo $titulo; ?>');
 #Menu activo
 $this->set('menu_activo', 'Inicio');
 

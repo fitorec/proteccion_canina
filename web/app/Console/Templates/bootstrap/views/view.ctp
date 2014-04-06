@@ -1,6 +1,6 @@
 <?php
 /**
- * e-escolar.net
+ * proteccion-canina
  * Plantilla ver - para cakephp con twbootstrap
  */
 
@@ -14,7 +14,7 @@ $pre4="\n\t\t\t";
 
 ?>
 /**
- * e-escolar.net
+ * proteccion-canina
  * Vista:  <?php echo $titulo."\n"; ?>
  */
 
@@ -22,7 +22,7 @@ $pre4="\n\t\t\t";
 $this->Html->initAuth($userAuth);
 
 #sección metaDatos
-$this->set('title_for_layout', 'e-scolar - <?php echo $titulo; ?>');
+$this->set('title_for_layout', 'proteccion-canina - <?php echo $titulo; ?>');
 #Menu activo
 $this->set('menu_activo', 'Inicio');
 
@@ -49,10 +49,10 @@ $this->Html->meta('description', '<?php echo $titulo; ?>', array('inline' => fal
 	<h3>Acciones</h3>
 	<ul class="nav nav-list">
 		<li><?php
-			/* Botón de Inicio e-scolar */
+			/* Botón de Inicio proteccion-canina */
 			echo "<?php";
-			echo $pre3 . "/* Botón de Inicio e-scolar */";
-			echo $pre3 . "echo \$this->Html->link('<i class=\"icon-home\"></i> Inicio e-scolar',";
+			echo $pre3 . "/* Botón de Inicio proteccion-canina */";
+			echo $pre3 . "echo \$this->Html->link('<i class=\"icon-home\"></i> Inicio proteccion-canina',";
 			echo $pre4 . "'/',";
 			echo $pre4 . "array('escape' => false)";
 			echo $pre3 . "); ?>" . $pre3;

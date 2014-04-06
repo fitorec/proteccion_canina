@@ -1,6 +1,6 @@
 <?php
 /**
- * e-escolar.net
+ * proteccion-canina
  * Plantilla form - para cakephp con twbootstrap
  */
 echo "<?php\n";
@@ -16,7 +16,7 @@ if(strpos($action, 'add')===false){
 }
 ?>
 /**
- * e-escolar.net
+ * proteccion-canina
  * Vista:  <?php echo $titulo."\n"; ?>
  */
 
@@ -24,7 +24,7 @@ if(strpos($action, 'add')===false){
 $this->Html->initAuth($userAuth);
 
 #sección metaDatos
-$this->set('title_for_layout', 'e-scolar - <?php echo $titulo; ?>');
+$this->set('title_for_layout', 'proteccion-canina - <?php echo $titulo; ?>');
 $this->Html->meta('description', '<?php echo $titulo; ?>', array('inline' => false));
 
 #Menu activo
