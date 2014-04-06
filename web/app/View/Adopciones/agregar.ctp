@@ -4,8 +4,7 @@
  * Vista:  Adopciones Agregar
  */
 
-#iniciando la autenticación
-$this->Html->initAuth($userAuth);
+
 
 #sección metaDatos
 $this->set('title_for_layout', 'proteccion-canina - Adopciones Agregar');
@@ -50,17 +49,17 @@ $this->set('menu_activo', 'Inicio');
 </div>
 
 <div class="adopciones form col-md-9">
-<?php echo $this->BtForm->create('Adopcion', array('class' => 'well')); ?>
-	<fieldset>
-		<legend>Agregar Adopcion</legend>
-	<?php
-		echo $this->BtForm->input('user_id', array('placeholder'=>'user_id'));
-		echo $this->BtForm->input('usuario_quien_dio_en_adopcion', array('placeholder'=>'usuario_quien_dio_en_adopcion'));
-		echo $this->BtForm->input('estado', array('placeholder'=>'estado'));
-		echo $this->BtForm->input('perro_id', array('placeholder'=>'perro_id'));
-	?>
-	</fieldset>
-<?php echo $this->BtForm->end('Enviar'); ?>
+<?php
+  echo $this->BtForm->create('Adopcion', array('class' => 'well'));
+  echo $this->BtForm->input('estado', array('placeholder'=>'estado'));
+  echo $this->BtForm->input('raza', array('placeholder'=>'raza'));
+  echo $this->BtForm->input('fecha_nacimiento', array('placeholder'=>'fecha_nacimiento'));
+  echo $this->BtForm->input('color', array('placeholder'=>'color'));
+  echo $this->BtForm->input('peso', array('placeholder'=>'peso'));
+  echo $this->BtForm->input('tamanio', array('placeholder'=>'tamanio'));
+  echo $this->BtForm->input('Vacuna');
+  echo $this->BtForm->end('Enviar');
+?>
 </div>
 </div>
 

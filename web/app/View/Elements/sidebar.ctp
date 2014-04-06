@@ -39,7 +39,7 @@
               </a>
             <ul>
               <li><a href="<?php echo Router::url('/adopciones/agregar/'); ?>">Dar en Adopción</a></li>
-              <li><a href="#">Adopta un Perro</a></li>
+              <li><a href="<?php echo Router::url('/adopciones/'); ?>">Adopta un Perro</a></li>
             </ul>
           </li>
 

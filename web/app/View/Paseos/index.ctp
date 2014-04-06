@@ -3,8 +3,7 @@
  * proteccion-canina
  * Vista:  Paseos Index
  */
-#iniciando la autenticación
-$this->Html->initAuth($userAuth);
+
 
 #sección metaDatos
 $this->set('title_for_layout', 'proteccion-canina - Paseos Index');

@@ -5,6 +5,8 @@
  * This file is application-wide controller file. You can put all
  * application-wide controller-related methods here.
  *
+ * PHP 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -18,8 +20,9 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('Controller', 'Controller');
+App::uses('Folder', 'Utility');
+App::uses('File', 'Utility');
 
 /**
  * Application Controller
@@ -27,8 +30,42 @@ App::uses('Controller', 'Controller');
  * Add your application-wide methods in the class below, your controllers
  * will inherit them.
  *
- * @package		app.Controller
- * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
+ * @package        app.Controller
+ * @link        http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+    protected static $_usuario = array();
+
+    var $components = array(
+        'Auth'=>array(
+                        'authError' => 'Esta es una area no autorizada.',
+                        'loginError' => 'Error al identificarse, intente de nuevo.'
+                    ),
+        'Session',
+        'RequestHandler'
+    );
+    var $helpers = array(
+		'Form',
+		'Html',
+		'Session',
+		'Js'
+	);
+    /******************** Funciones *******************************************************/
+    function  beforeFilter() {
+        $userAuth = null;
+        $this->Auth->loginRedirect = '/';
+        if($this->Auth->loggedIn()) {
+					$userAuth = $this->Auth->user();
+					$userAuth['role'] = 'Registrado';
+        } else {
+          $userAuth = array(
+            'role' => 'Internauta',
+            'username' => 'username'
+          );
+        }
+        /////////////////////////
+        $this->set('userAuth', $userAuth);
+        $helpers['App']['userAuth'] = $userAuth;
+        parent::beforeFilter();
+    }
 }

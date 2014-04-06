@@ -4,8 +4,7 @@
  * Vista:  Veterinarias Agregar
  */
 
-#iniciando la autenticación
-$this->Html->initAuth($userAuth);
+
 
 #sección metaDatos
 $this->set('title_for_layout', 'proteccion-canina - Veterinarias Agregar');

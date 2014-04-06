@@ -4,8 +4,7 @@
  * Vista:  Posiciones Agregar
  */
 
-#iniciando la autenticación
-$this->Html->initAuth($userAuth);
+
 
 #sección metaDatos
 $this->set('title_for_layout', 'proteccion-canina - Posiciones Agregar');

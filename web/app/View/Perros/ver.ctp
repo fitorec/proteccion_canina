@@ -4,8 +4,7 @@
  * Vista:  Perros Ver
  */
 
-#iniciando la autenticación
-$this->Html->initAuth($userAuth);
+
 
 #sección metaDatos
 $this->set('title_for_layout', 'proteccion-canina - Perros Ver');

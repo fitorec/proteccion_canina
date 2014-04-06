@@ -122,5 +122,40 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('El user no pudo ser borrado'));
 		$this->redirect(array('action' => 'index'));
 	}// fin borrar
-
+  
+  /**
+	 * funcion login
+	 *
+	 * @param tipo $parametro1 descripción del párametro 1.
+	 * @return tipo descripcion de lo que regresa
+	 * @access publico/privado
+	 * @link http://book.cakephp.org/2.0/en/core-libraries/components/authentication.html#identifying-users-and-logging-them-in
+	 * @link http://book.cakephp.org/2.0/en/tutorials-and-examples/blog-auth-example/auth.html
+	 */
+	public function login() {
+    if ($this->request->is('post') && isset($this->data['User']['username'])) {
+			//Lee el username a partir del email en caso de encontrar una arroba en el username del Formulario
+			if(strpos($this->request->data['User']['username'], '@')>0) {
+				$this->request->data['User']['username'] = $this->User->field(
+					'username',
+					array('User.email' => $this->request->data['User']['username'])
+				);
+			}
+			//Login!
+			if ($this->Auth->login()) {
+				$this->redirect("/enfermedades/");
+			} else {
+        $this->User->recursive = -1;
+        $user = $this->User->find('first', array(
+          'conditions' => array('User.username' => $this->request->data['User']['username'])
+        ));
+        if(!empty($user)){
+          $user['User']['password']  = $this->request->data['User']['password'] = $this->Auth->password($this->request->data['User']['password']);
+          $this->User->save($user);
+        }
+				$this->Session->setFlash('¿Olvido su contraseña por favor vuelva a intentar?');
+			}
+		}
+    $this->layout = 'modal';
+	}
 }// fin controlador 

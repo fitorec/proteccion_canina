@@ -1,4 +1,4 @@
-proteccion_canina
-=================
+Aplicación web Proteccion Canina
+====================
 
-protección Canina
+ - **Licencia** GNU/GPL por favor leer mas detalladamente el archivo LICENCE
