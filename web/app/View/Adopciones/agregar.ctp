@@ -51,13 +51,18 @@ $this->set('menu_activo', 'Inicio');
 <div class="adopciones form col-md-9">
 <?php
   echo $this->BtForm->create('Adopcion', array('class' => 'well'));
-  echo $this->BtForm->input('estado', array('placeholder'=>'estado'));
-  echo $this->BtForm->input('raza', array('placeholder'=>'raza'));
-  echo $this->BtForm->input('fecha_nacimiento', array('placeholder'=>'fecha_nacimiento'));
-  echo $this->BtForm->input('color', array('placeholder'=>'color'));
-  echo $this->BtForm->input('peso', array('placeholder'=>'peso'));
-  echo $this->BtForm->input('tamanio', array('placeholder'=>'tamanio'));
-  echo $this->BtForm->input('Vacuna');
+  echo $this->BtForm->input('Perro.raza', array('placeholder'=>'raza'));
+  echo $this->BtForm->input('Perro.fecha_nacimiento', array('placeholder'=>'fecha_nacimiento'));
+  echo $this->BtForm->input('Perro.color', array('placeholder'=>'color'));
+  echo $this->BtForm->input('Perro.peso', array('placeholder'=>'peso'));
+  echo $this->BtForm->input('Perro.tamanio', array('placeholder'=>'tamanio'));
+  echo $this->BtForm->input(
+      'Perro.vacuna',
+      array(
+        'options' => $vacunas,
+        'empty'=>'--ninguna--'
+      )
+  );
   echo $this->BtForm->end('Enviar');
 ?>
 </div>

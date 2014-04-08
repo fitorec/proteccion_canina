@@ -95,7 +95,7 @@ $this->Html->meta('description', 'Enfermedades Index', array('inline' => false))
 		</td>
 		<td>
 			<?php echo $this->Html->link(
-			$enfermedad['Vacuna']['id'],
+			$enfermedad['Vacuna']['nombre'],
 			array('controller' => 'vacunas', 'action' => 'ver', $enfermedad['Vacuna']['id'])
 			);
 			?>

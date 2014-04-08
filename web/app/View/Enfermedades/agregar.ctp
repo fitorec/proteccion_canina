@@ -48,8 +48,13 @@ $this->set('menu_activo', 'Inicio');
 	<fieldset>
 		<legend>Agregar Enfermedad</legend>
 	<?php
-		echo $this->BtForm->input('vacuna_id', array('placeholder'=>'vacuna_id'));
 		echo $this->BtForm->input('nombre', array('placeholder'=>'nombre'));
+    echo $this->BtForm->input(
+      'vacuna_id',
+      array(
+        'empty'=>'--ninguna--'
+      )
+  );
 		echo $this->BtForm->input('descripcion', array('placeholder'=>'descripcion'));
 	?>
 	</fieldset>

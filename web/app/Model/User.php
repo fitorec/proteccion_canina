@@ -44,15 +44,20 @@ class User extends AppModel {
 			),
 		),
 		'username' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+            'notempty' => array(
+                'rule' => '/^[a-z0-9_.-]{3,15}$/i',
+                'message' => 'Solo carácteres alfanumericos, la longitud debe ser entre 3 a 15 carácteres',
+                'allowEmpty' => false,
+                'required' => true,
+                //'last' => false, // Stop validation after this rule
+                'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+            'unique' => array(
+                'rule' => 'isUnique',
+                'required' => 'create',
+                'message' => 'El username tiene que ser unico',
+        )
+    ),
 		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
@@ -63,6 +68,15 @@ class User extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+    'password' => array(
+            'notempty' => array(
+                'rule' => '/^[0-9a-zA-Z_-]{6,41}$/',
+                'message' => 'Debe contener minusculas, mayusculas, números de longitud minima 6 carácteres',
+                'allowEmpty' => false,
+                'required' => true,
+                'on' => 'create',
+            )
+        ),
 	);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed

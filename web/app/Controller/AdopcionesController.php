@@ -66,6 +66,12 @@ class AdopcionesController extends AppController {
 	public function agregar() {
 		if ($this->request->is('post')) {
 			$this->Adopcion->create();
+      //echo $this->BtForm->input('Adopcion.estado', array('placeholder'=>'estado'));
+      // 
+      $perro = $this->Adopcion->Perro->save($this->request->data);
+      $this->request->data['Adopcion']['user_id'] = 1;
+      $this->request->data['Adopcion']['estado'] = 'abierta';
+      $this->request->data['Adopcion']['perro_id'] = $perro['Perro']['id'];
 			if ($this->Adopcion->save($this->request->data)) {
 				$this->Session->setFlash(__('El adopcion fue guardado'));
 				$this->redirect(array('action' => 'index'));
@@ -74,8 +80,9 @@ class AdopcionesController extends AppController {
 			}
 		}
 		$users = $this->Adopcion->User->find('list');
+		$vacunas = $this->Adopcion->Perro->Vacuna->find('list');
 		$perros = $this->Adopcion->Perro->find('list');
-		$this->set(compact('users', 'perros'));
+		$this->set(compact('users', 'perros', 'vacunas'));
 	}// fin agregar
 
 /**

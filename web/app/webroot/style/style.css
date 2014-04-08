@@ -2142,3 +2142,10 @@ footer .copy{
 		display: none;
 	}
 }
+
+/** agregado por fitorec **/
+form .required label:after {
+	color: #e32;
+	content: ' (*)';
+	display:inline;
+}

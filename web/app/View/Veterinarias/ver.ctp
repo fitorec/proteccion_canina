@@ -47,38 +47,7 @@ $this->Html->meta('description', 'Veterinarias Ver', array('inline' => false));
 			array('escape' => false)
 		); ?>
 		</li>
-<?php
-		/* Editar Veterinaria */
-	if(in_array($userAuth['role'], array('Administrativo', 'Profesor'))) : ?>
-				<li><?php
-		echo $this->Html->link(
-			'<i class="icon-plus"></i> Agregar Veterinaria',
-			array('action' => 'Agregar'),
-			array('escape' => false)
-		); ?></li>
-		<li><?php
-		echo $this->Html->link(
-			'<i class="icon-pencil"></i> Editar Veterinaria',
-			array('action' => 'editar', $veterinaria['Veterinaria']['id']),
-			array('escape' => false)
-		); ?>
-		</li>
 
-
-	<?php endif; ?>
-<?php
-	/* Editar Veterinaria */
-	if($userAuth['role'] == 'Administrativo') : ?>
-			<li><?php
-		echo $this->Form->postLink(
-			'<i class="icon-trash"></i> Borrar Veterinaria',
-			array('action' => 'borrar', $veterinaria['Veterinaria']['id']),
-			array('escape' => false),
-			'Esta seguro de querer borrar el registro ' . $veterinaria['Veterinaria']['id']
-		); ?>
-		</li>
-
-	<?php endif; ?>
 
 		<li class='divider'></li>
 		<li class='nav-header'>Posiciones</li>
@@ -89,17 +58,6 @@ $this->Html->meta('description', 'Veterinarias Ver', array('inline' => false));
 			array('escape' => false)
 		);
 		?> </li>
-	<?php
-	/* Agregar */
-	if(in_array($userAuth['role'], array('Administrativo', 'Profesor'))) : ?>
-		<li><?php
-			echo $this->Html->link(
-			'<i class="icon-plus"></i> Agregar Posicion',
-			array('controller' => 'posiciones', 'action' => 'agregar'),
-			array('escape' => false)
-		);
-		?> </li>
-	<?php endif; ?>	<!-- Compartir sección -->
 			<li class='divider'></li>
 			<li class='nav-header'>
 				<i class="icon-share"></i> Compartir

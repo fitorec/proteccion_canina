@@ -56,7 +56,49 @@
               <li><a href="<?php echo Router::url('/adopciones/agregar/'); ?>">Atropellados</a></li>
             </ul>
           </li>
-
+      <!-- Seccón App -->
+          <li class="has_sub">
+              <a href="#">
+              <i class="fa fa-plus"></i>
+              <span>Más Opciones</span>
+              <span class="pull-right">
+                <i class="fa fa-chevron-left"></i></span>
+              </a>
+            <ul>
+              <li>
+                  <a href="<?php echo Router::url('/enfermedades'); ?>">
+                    <i class='fa fa-plus'></i>
+                    Enfermedades
+                  </a>
+                </li>
+              <li>
+                  <a href="<?php echo Router::url('/vacunas'); ?>">
+                    <i class='fa fa-plus'></i>
+                    Vacunas
+                  </a>
+                </li>
+              <li>
+                <a href="<?php echo Router::url('/veterinarias'); ?>">
+                  <i class='fa fa-plus'></i>
+                  Veterinarias
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo Router::url('/paseos'); ?>">
+                  <i class='fa fa-plus'></i>
+                  Paseos
+                </a>
+              </li>
+              <li>
+                <a href="<?php echo Router::url('/extraviados'); ?>">
+                  <i class='fa fa-plus'></i>
+                  Extraviados
+                </a>
+              </li>
+            </ul>
+          </li>
+      <!-- Repositorio -->
+      <!-- Seccón App -->
           <li class="has_sub">
               <a href="#">
               <i class="fa fa-mobile-phone"></i>
@@ -85,6 +127,13 @@
                 </li>
             </ul>
           </li>
+      <!-- Repositorio -->
+      <li>
+          <a href="<?php echo Router::url('/pages/licencia_codigo'); ?>" class="open">
+            <i class="fa fa-github"></i>
+            <span>Licencia y Código</span></a>
+      </li>
+
         </ul>
     </div>
 

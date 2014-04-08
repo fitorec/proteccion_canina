@@ -25,7 +25,7 @@ class UsersController extends AppController {
  * beforeFilter - Se ejecuta antes de cada acción
  */
 	function beforeFilter() {
-				//$this->Auth->allow(array('index', 'ver'));
+				$this->Auth->allow(array('registro'));
 				parent::beforeFilter();
 	}// fin beforeFilter
 
@@ -158,4 +158,9 @@ class UsersController extends AppController {
 		}
     $this->layout = 'modal';
 	}
+  ////
+  public function registro() {
+    $this->layout = 'modal';
+	}
+
 }// fin controlador 

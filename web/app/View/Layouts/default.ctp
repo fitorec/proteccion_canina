@@ -1,3 +1,7 @@
+<?php
+$titulo = str_replace('proteccion-canina -', '',$title_for_layout);
+$titulo = str_replace('index', 'Inicio', $titulo);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +68,7 @@
       
 	    <!-- Page heading -->
 	    <div class="page-head">
-	      <h2 class="pull-left">Dashboard</h2>
+	      <h2 class="pull-left"><?php echo $titulo; ?></h2>
         <div class="pull-right">
            <div id="reportrange" class="pull-right">
               <i class="fa fa-calendar"></i>
@@ -74,10 +78,12 @@
         <div class="clearfix"></div>
         <!-- Breadcrumb -->
         <div class="bread-crumb">
-          <a href="index.html"><i class="fa fa-home"></i> Home</a> 
+          <a href="<?php echo Router::url('/'); ?>"><i class="fa fa-home"></i> Inicio</a> 
           <!-- Divider -->
           <span class="divider">/</span> 
-          <a href="#" class="bread-current">Dashboard</a>
+          <a href="#" class="bread-current">
+            <?php echo $titulo; ?>
+          </a>
         </div>
         
         <div class="clearfix"></div>

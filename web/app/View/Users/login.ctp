@@ -80,7 +80,7 @@
                 </div>
               
                 <div class="widget-foot">
-                  Not Registred? <a href="#">Register here</a>
+                  No estas registrado? <a href="<?php echo Router::url('/users/registro'); ?>">Registrate ahora</a>
                 </div>
             </div>  
       </div>
